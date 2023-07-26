@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Stucco_Doorway_Narrow_Tall.obj-b599104ee147572bb39a623412054859.mesh"
+
+[deps]
+
+files=[ "res://.import/Stucco_Doorway_Narrow_Tall.obj-b599104ee147572bb39a623412054859.mesh" ]
+
+source_file="res://Modular Village - Assets/Modular Village/Stucco_Doorway_Narrow_Tall.obj"
+dest_files=[ "res://.import/Stucco_Doorway_Narrow_Tall.obj-b599104ee147572bb39a623412054859.mesh", "res://.import/Stucco_Doorway_Narrow_Tall.obj-b599104ee147572bb39a623412054859.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

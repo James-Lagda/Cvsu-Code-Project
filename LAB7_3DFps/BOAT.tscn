@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Modular Village - Assets/Modular Village/Prop_Boat_1.obj" type="ArrayMesh" id=1]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.708439
+height = 0.735441
+
+[node name="BOAT" type="RigidBody"]
+
+[node name="Prop_Boat_1" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00616193, -0.235407, 0 )
+mesh = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 0.671604, 0, 0, 0, 0.297427, 0, 0, 0, 1, 0, 0.407041, 0 )
+shape = SubResource( 1 )

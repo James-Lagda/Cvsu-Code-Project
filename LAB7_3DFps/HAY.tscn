@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Modular Village - Assets/Modular Village/Prop_Hay_1.obj" type="ArrayMesh" id=1]
+
+[sub_resource type="CapsuleShape" id=1]
+
+[node name="HAY" type="RigidBody"]
+
+[node name="Prop_Hay_1" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 0.346521, 0, 0, 0, 0.161857, 0, 0, 0, 0.138887, 0, 0.212691, 0 )
+shape = SubResource( 1 )
