@@ -1,0 +1,192 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scenes/armed/Pistol.gd" type="Script" id=1]
+[ext_resource path="res://scenes/MuzzleFlash.tscn" type="PackedScene" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.188235, 0.176471, 0.176471, 1 )
+
+[sub_resource type="CubeMesh" id=2]
+material = SubResource( 1 )
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root/Anchor:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Root/Anchor/body:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 10, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "equip"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root/Anchor:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 90, 0, 0 ), Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "show_weapon"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Root/Anchor/body:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "fire"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root/Anchor/body:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 10, 0, 0 ), Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "fire_bullet"
+} ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "reload"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root/Anchor/body:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 360, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "unequip"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root/Anchor:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( -90, 0, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "hide_weapon"
+} ]
+}
+
+[node name="Pistol" type="Spatial"]
+script = ExtResource( 1 )
+weapon_name = "Pistol"
+fire_rate = 2.0
+impact_effect = ExtResource( 2 )
+muzzle_flash_path = NodePath("Root/Anchor/MuzzleFlash")
+reload_speed = 2.0
+
+[node name="Root" type="Spatial" parent="."]
+
+[node name="Anchor" type="Spatial" parent="Root"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5 )
+
+[node name="body" type="Spatial" parent="Root/Anchor"]
+transform = Transform( 1, 0, 0, 0, 0.984808, -0.173648, 0, 0.173648, 0.984808, 0, 0, -0.5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Root/Anchor/body"]
+transform = Transform( 0.02, 0, 0, 0, 0.03, 0, 0, 0, 0.15, 0, 0.0363906, 0 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../../../..")
+
+[node name="MeshInstance2" type="MeshInstance" parent="Root/Anchor/body"]
+transform = Transform( 0.02, 1.22e-09, -2.31518e-09, -8.13335e-10, 0.0110004, -0.0778059, -5.53666e-10, 0.0279104, 0.0306658, 0, -0.0229643, 0.126804 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../../../..")
+
+[node name="MuzzleFlash" parent="Root/Anchor" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.039177, -0.703364 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 3 )
+anims/equip = SubResource( 4 )
+anims/fire = SubResource( 6 )
+anims/reload = SubResource( 7 )
+anims/unequip = SubResource( 5 )

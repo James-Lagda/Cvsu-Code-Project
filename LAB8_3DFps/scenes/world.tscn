@@ -1,0 +1,148 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/ground.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/obstacle.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/ammo_pickup/AmmoPickup.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Person.tscn" type="PackedScene" id=5]
+
+[node name="world" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.174374, 6.10352e-05, -0.106523 )
+
+[node name="ground" parent="." instance=ExtResource( 1 )]
+transform = Transform( 50, 0, 0, 0, 0.5, 0, 0, 0, 50, 0, 0, -0.281 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 10.9109 )
+
+[node name="Obstacle" type="Spatial" parent="."]
+
+[node name="obstacle" parent="Obstacle" instance=ExtResource( 2 )]
+transform = Transform( 49.5936, 0, 0, 0, 1.11054, 0, 0, 0, 1.11054, -0.877563, 1.78918, -48.7574 )
+
+[node name="obstacle12" parent="Obstacle" instance=ExtResource( 2 )]
+transform = Transform( 49.5936, 0, 0, 0, 1.11054, 0, 0, 0, 1.11054, -0.299881, 1.78918, 48.6796 )
+
+[node name="obstacle2" parent="Obstacle" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 47.961, -49.2295, 1.41286, -0.0839663 )
+
+[node name="obstacle3" parent="Obstacle" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 49.4055, 48.8706, 1.41246, -0.2244 )
+
+[node name="obstacle4" parent="Obstacle" instance=ExtResource( 2 )]
+transform = Transform( 8.41233, 0, 0, 0, 0.205915, 0, 0, 0, 0.862956, -24.6172, 1.38595, -4 )
+
+[node name="obstacle5" parent="Obstacle" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 3.93009, -32.0738, 1.41246, 0.807585 )
+
+[node name="obstacle6" parent="Obstacle" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 3.70391, -17.373, 1.41246, 0.559363 )
+
+[node name="obstacle7" parent="Obstacle" instance=ExtResource( 2 )]
+transform = Transform( 7.93433, 0, 0, 0, 1, 0, 0, 0, 1, -40.6721, 1.41246, 3.69079 )
+
+[node name="obstacle8" parent="Obstacle" instance=ExtResource( 2 )]
+transform = Transform( 9.28335, 0, 0, 0, 1, 0, 0, 0, 1, -9.12959, 1.41246, 3.40315 )
+
+[node name="obstacle10" parent="Obstacle" instance=ExtResource( 2 )]
+transform = Transform( 7.93433, 0, 0, 0, 1, 0, 0, 0, 1, 7.0294, 1.41246, 3.3301 )
+
+[node name="obstacle11" parent="Obstacle" instance=ExtResource( 2 )]
+transform = Transform( 9.28335, 0, 0, 0, 1, 0, 0, 0, 1, 38.5719, 1.41246, 3.04246 )
+
+[node name="obstacle9" parent="Obstacle" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 26.4349, 0.0542908, 1.41246, -22.173 )
+
+[node name="obstacle13" parent="Obstacle" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.601, 1.50604, 0.618868 )
+
+[node name="obstacle14" parent="Obstacle" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.369, 15.793, -36.4052 )
+
+[node name="obstacle15" parent="Obstacle" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.4219, 5.97225, -5.10354 )
+
+[node name="obstacle16" parent="Obstacle" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8792, 4.46162, -5.10354 )
+
+[node name="obstacle17" parent="Obstacle" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8792, 8.46807, -16.2931 )
+
+[node name="obstacle18" parent="Obstacle" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.2879, 4.79002, -16.2931 )
+
+[node name="obstacle19" parent="Obstacle" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.2879, 10.8982, -28.7709 )
+
+[node name="obstacle20" parent="Obstacle" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.8868, 7.4172, -28.7709 )
+
+[node name="obstacle21" parent="Obstacle" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2083, 2.95099, -28.7709 )
+
+[node name="obstacle22" parent="Obstacle" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.2826, 13.3284, -17.2419 )
+
+[node name="Ammos" type="Spatial" parent="."]
+
+[node name="AmmoPickup" parent="Ammos" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1158, 0.587449, 24.5576 )
+
+[node name="AmmoPickup2" parent="Ammos" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.32941, 0.587449, 24.7728 )
+
+[node name="AmmoPickup3" parent="Ammos" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38668, 0.587449, 19.9305 )
+
+[node name="AmmoPickup4" parent="Ammos" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28.3887, 0.587449, 21.1142 )
+
+[node name="AmmoPickup5" parent="Ammos" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31.548, 0.587449, 17.9936 )
+
+[node name="AmmoPickup6" parent="Ammos" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4759, 0.587449, 19.9305 )
+
+[node name="AmmoPickup7" parent="Ammos" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.9023, 0.587449, 32.4128 )
+
+[node name="AmmoPickup8" parent="Ammos" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.04529, 0.587449, 32.9508 )
+
+[node name="AmmoPickup9" parent="Ammos" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.0343, 0.587449, 34.7801 )
+
+[node name="AmmoPickup10" parent="Ammos" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.0343, 0.587449, 34.7801 )
+
+[node name="Enemies" type="Spatial" parent="."]
+
+[node name="person" parent="Enemies" instance=ExtResource( 5 )]
+transform = Transform( 0.3, 0, 0, 0, 0.2, 0, 0, 0, 0.3, -39.9441, 0.500008, -16.4489 )
+
+[node name="person2" parent="Enemies" instance=ExtResource( 5 )]
+transform = Transform( 0.3, 0, 0, 0, 0.2, 0, 0, 0, 0.3, -33.4442, 0.500008, -25.6253 )
+
+[node name="person3" parent="Enemies" instance=ExtResource( 5 )]
+transform = Transform( 0.3, 0, 0, 0, 0.2, 0, 0, 0, 0.3, -27.7855, 0.500008, -17.8254 )
+
+[node name="person4" parent="Enemies" instance=ExtResource( 5 )]
+transform = Transform( 0.3, 0, 0, 0, 0.2, 0, 0, 0, 0.3, -22.662, 0.500008, -29.0664 )
+
+[node name="person5" parent="Enemies" instance=ExtResource( 5 )]
+transform = Transform( 0.3, 0, 0, 0, 0.2, 0, 0, 0, 0.3, -14.6327, 0.500008, -25.09 )
+
+[node name="person6" parent="Enemies" instance=ExtResource( 5 )]
+transform = Transform( 0.3, 0, 0, 0, 0.2, 0, 0, 0, 0.3, -9.43279, 0.500008, -16.4489 )
+
+[node name="person7" parent="Enemies" instance=ExtResource( 5 )]
+transform = Transform( 0.3, 0, 0, 0, 0.2, 0, 0, 0, 0.3, -18.7621, 0.500008, -17.443 )
+
+[node name="person8" parent="Enemies" instance=ExtResource( 5 )]
+transform = Transform( 0.3, 0, 0, 0, 0.2, 0, 0, 0, 0.3, -32.4743, 0.500008, -36.616 )
+
+[node name="person9" parent="Enemies" instance=ExtResource( 5 )]
+transform = Transform( 0.3, 0, 0, 0, 0.2, 0, 0, 0, 0.3, -16.2138, 0.500008, -38.0721 )
+
+[node name="person10" parent="Enemies" instance=ExtResource( 5 )]
+transform = Transform( 0.3, 0, 0, 0, 0.2, 0, 0, 0, 0.3, -39.9979, 0.500008, -30.0632 )

@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://models/weapons/Pistol_B.glb" type="PackedScene" id=1]
+[ext_resource path="res://models/weapons/Eagle.png" type="Texture" id=2]
+[ext_resource path="res://scenes/armed/Pistol.gd" type="Script" id=3]
+[ext_resource path="res://scenes/MuzzleFlash.tscn" type="PackedScene" id=4]
+
+[node name="Eagle" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+weapon_name = "Eagle"
+weapon_image = ExtResource( 2 )
+fire_rate = 1.5
+impact_effect = ExtResource( 4 )
+muzzle_flash_path = NodePath("Root/MuzzleFlash")
+reload_speed = 2.0
+
+[node name="MuzzleFlash" parent="Root" index="1" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0838768, -0.277842 )
